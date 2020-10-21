@@ -14,7 +14,10 @@ class AluraMais extends Video implements PontuavelInterface
 
     public function recuperarUrl(): string
     {
-        return str_replace(' ', '-', strtolower($this->categoria));
+        return sprintf('http://videos.alura.com.br/%s/%s',
+            (new Slug($this->categoria))->__toString(),
+            (new Slug($this->nome))->__toString()
+        );
     }
 
     public function recuperarPontuacao(): int
