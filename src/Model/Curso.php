@@ -2,7 +2,7 @@
 
 namespace Alura\Solid\Model;
 
-class Curso implements PontuavelInterface
+class Curso implements PontuavelInterface, AssistivelInterface
 {
     private $nome;
     private $videos;
